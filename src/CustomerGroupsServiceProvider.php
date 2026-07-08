@@ -6,6 +6,7 @@ namespace Shopper\CustomerGroups;
 
 use Shopper\Cart\Discounts\DiscountEligibilityManager;
 use Shopper\Core\Traits\HasRegisterConfigAndMigrationFiles;
+use Shopper\CustomerGroups\Console\InstallCommand;
 use Shopper\CustomerGroups\Discounts\GroupEligibilityField;
 use Shopper\CustomerGroups\Discounts\GroupEligibilityRule;
 use Shopper\Discounts\DiscountEligibilityFieldRegistry;
@@ -23,7 +24,8 @@ final class CustomerGroupsServiceProvider extends PackageServiceProvider
         $package
             ->name('shopper-customer-groups')
             ->hasTranslations()
-            ->hasViews();
+            ->hasViews()
+            ->hasCommand(InstallCommand::class);
     }
 
     public function packageRegistered(): void

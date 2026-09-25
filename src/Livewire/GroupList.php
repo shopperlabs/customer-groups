@@ -45,9 +45,7 @@ class GroupList extends AbstractPageComponent implements HasActions, HasSchemas,
     }
 
     #[On('customer-groups.members.updated')]
-    public function refreshGroups(): void
-    {
-    }
+    public function refreshGroups(): void {}
 
     public function createGroupAction(): Action
     {

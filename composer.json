@@ -16,9 +16,13 @@
       "role": "Developer"
     }
   ],
+  "support": {
+    "issues": "https://github.com/shopperlabs/customer-groups/issues",
+    "source": "https://github.com/shopperlabs/customer-groups"
+  },
   "require": {
     "php": "^8.3",
-    "shopper/framework": "^3.0.0-beta.4",
+    "shopper/framework": "^3.0.0-rc.2",
     "spatie/laravel-package-tools": "^1.15"
   },
   "require-dev": {

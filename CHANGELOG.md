@@ -2,6 +2,14 @@
 
 All notable changes to `shopper/customer-groups` will be documented in this file.
 
+## v1.0.1 - 2026-10-20
+
+### Bug Fixes
+
+* fix(install): insert the install command imports in the existing `use` block, register the addon in the first `Shopper::addons()` call only, and declare the illuminate, Filament, Livewire and Prompts dependencies by @mckenziearts in [#3](https://github.com/shopperlabs/customer-groups/pull/3)
+
+**Full Changelog**: https://github.com/shopperlabs/customer-groups/compare/v1.0.0...v1.0.1
+
 ## v1.0.0 - 2026-09-25
 
 > [!IMPORTANT]
@@ -15,10 +23,12 @@ Shopper 3 is still a release candidate, so your application needs:
 "minimum-stability": "RC",
 "prefer-stable": true
 
+
 ```
 ```bash
 composer require shopper/customer-groups
 php artisan shopper:customer-groups:install
+
 
 ```
 The install command runs the migrations and registers the add-on in `AppServiceProvider`. To register it by hand:
@@ -30,6 +40,7 @@ use Shopper\Facades\Shopper;
 Shopper::addons([
     new CustomerGroupsAddon,
 ]);
+
 
 ```
 ### New Features

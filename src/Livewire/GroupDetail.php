@@ -45,7 +45,7 @@ class GroupDetail extends SlideOverComponent implements HasActions, HasSchemas, 
         return true;
     }
 
-    public function mount(?CustomerGroup $group = null): void
+    public function mount(CustomerGroup $group): void
     {
         $this->authorize('customers.browse');
 

@@ -7,6 +7,7 @@ namespace Shopper\CustomerGroups\Console;
 use Closure;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 use function Laravel\Prompts\intro;
@@ -66,7 +67,7 @@ final class InstallCommand extends Command
         }
 
         $updated = $this->addImports($contents);
-        $updated = $this->addAddonRegistration($updated);
+        $updated = $updated === null ? null : $this->addAddonRegistration($updated);
 
         if ($updated === null) {
             $this->manualRegistrationNotice();
@@ -79,29 +80,35 @@ final class InstallCommand extends Command
         });
     }
 
-    private function addImports(string $contents): string
+    private function addImports(string $contents): ?string
     {
-        $imports = '';
+        $missing = array_filter(
+            ['use Shopper\Facades\Shopper;', 'use Shopper\CustomerGroups\CustomerGroupsAddon;'],
+            fn (string $import): bool => ! str_contains($contents, $import),
+        );
 
-        if (! str_contains($contents, 'use Shopper\Facades\Shopper;')) {
-            $imports .= "use Shopper\\Facades\\Shopper;\n";
-        }
-
-        if (! str_contains($contents, 'use Shopper\CustomerGroups\CustomerGroupsAddon;')) {
-            $imports .= "use Shopper\\CustomerGroups\\CustomerGroupsAddon;\n";
-        }
-
-        if ($imports === '') {
+        if ($missing === []) {
             return $contents;
         }
 
-        return (string) preg_replace('/^(namespace [^;]+;\n\n?)/m', '$1'.$imports, $contents, 1);
+        if (preg_match('/^(?:use (?!function |const )[^;]+;\R)+/m', $contents, $block) !== 1) {
+            $updated = preg_replace('/^(namespace [^;]+;\R\R?)/m', '$1'.implode("\n", $missing)."\n", $contents, 1, $count);
+
+            return $count === 1 ? $updated : null;
+        }
+
+        $imports = collect(preg_split('/\R/', $block[0], -1, PREG_SPLIT_NO_EMPTY))
+            ->merge($missing)
+            ->sort(fn (string $a, string $b): int => strcasecmp(str_replace('\\', ' ', $a), str_replace('\\', ' ', $b)))
+            ->implode("\n");
+
+        return Str::replaceFirst($block[0], $imports."\n", $contents);
     }
 
     private function addAddonRegistration(string $contents): ?string
     {
         if (str_contains($contents, 'Shopper::addons([')) {
-            return str_replace(
+            return Str::replaceFirst(
                 'Shopper::addons([',
                 "Shopper::addons([\n            new CustomerGroupsAddon,",
                 $contents,

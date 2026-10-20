@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4a9bb033299e898b6eaf9977f8a605b",
+    "content-hash": "c40ec31ec16aede9be6b37d764adbafa",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7090,22 +7090,24 @@
         },
         {
             "name": "shopper/cart",
-            "version": "v3.0.0-rc.2",
+            "version": "v3.0.0-rc.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopperlabs/cart.git",
-                "reference": "7db21f543c0e88091e3057eb0c83f57d8231c6f1"
+                "reference": "920c44d055edc80340b9d774921ab9cf13daa0b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopperlabs/cart/zipball/7db21f543c0e88091e3057eb0c83f57d8231c6f1",
-                "reference": "7db21f543c0e88091e3057eb0c83f57d8231c6f1",
+                "url": "https://api.github.com/repos/shopperlabs/cart/zipball/920c44d055edc80340b9d774921ab9cf13daa0b4",
+                "reference": "920c44d055edc80340b9d774921ab9cf13daa0b4",
                 "shasum": ""
             },
             "require": {
+                "illuminate/cache": "^12.68|^13.27",
                 "illuminate/console": "^12.68|^13.27",
                 "illuminate/contracts": "^12.68|^13.27",
                 "illuminate/database": "^12.68|^13.27",
+                "illuminate/events": "^12.68|^13.27",
                 "illuminate/pipeline": "^12.68|^13.27",
                 "illuminate/session": "^12.68|^13.27",
                 "illuminate/support": "^12.68|^13.27",
@@ -7133,22 +7135,22 @@
             "description": "Shopper cart management with pipeline-based calculation",
             "support": {
                 "issues": "https://github.com/shopperlabs/cart/issues",
-                "source": "https://github.com/shopperlabs/cart/tree/v3.0.0-rc.2"
+                "source": "https://github.com/shopperlabs/cart/tree/v3.0.0-rc.3"
             },
-            "time": "2026-09-17T21:04:29+00:00"
+            "time": "2026-10-05T13:07:42+00:00"
         },
         {
             "name": "shopper/core",
-            "version": "v3.0.0-rc.2",
+            "version": "v3.0.0-rc.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopperlabs/core.git",
-                "reference": "9c67676a1e25e37e65e75b3e04d0418569387d24"
+                "reference": "45124cb9ad3b59051b3a3f20990e772db672254d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopperlabs/core/zipball/9c67676a1e25e37e65e75b3e04d0418569387d24",
-                "reference": "9c67676a1e25e37e65e75b3e04d0418569387d24",
+                "url": "https://api.github.com/repos/shopperlabs/core/zipball/45124cb9ad3b59051b3a3f20990e772db672254d",
+                "reference": "45124cb9ad3b59051b3a3f20990e772db672254d",
                 "shasum": ""
             },
             "require": {
@@ -7156,11 +7158,14 @@
                 "giggsey/libphonenumber-for-php": "^9.0",
                 "illuminate/broadcasting": "^12.68|^13.27",
                 "illuminate/bus": "^12.68|^13.27",
+                "illuminate/cache": "^12.68|^13.27",
                 "illuminate/console": "^12.68|^13.27",
                 "illuminate/contracts": "^12.68|^13.27",
                 "illuminate/database": "^12.68|^13.27",
                 "illuminate/events": "^12.68|^13.27",
+                "illuminate/filesystem": "^12.68|^13.27",
                 "illuminate/http": "^12.68|^13.27",
+                "illuminate/log": "^12.68|^13.27",
                 "illuminate/queue": "^12.68|^13.27",
                 "illuminate/support": "^12.68|^13.27",
                 "laravel/scout": "^10.13",
@@ -7193,22 +7198,22 @@
             ],
             "description": "Shopper e-commerce core functionality",
             "support": {
-                "source": "https://github.com/shopperlabs/core/tree/v3.0.0-rc.2"
+                "source": "https://github.com/shopperlabs/core/tree/v3.0.0-rc.3"
             },
-            "time": "2026-09-17T21:04:32+00:00"
+            "time": "2026-10-05T13:07:11+00:00"
         },
         {
             "name": "shopper/framework",
-            "version": "v3.0.0-rc.2",
+            "version": "v3.0.0-rc.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopperlabs/admin.git",
-                "reference": "b6dc00dfdb3cff70b1717bdb6c4cfbb3de15521d"
+                "reference": "ffb49835ff2cfb548a6b09516c0ea5d97e8f0e86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopperlabs/admin/zipball/b6dc00dfdb3cff70b1717bdb6c4cfbb3de15521d",
-                "reference": "b6dc00dfdb3cff70b1717bdb6c4cfbb3de15521d",
+                "url": "https://api.github.com/repos/shopperlabs/admin/zipball/ffb49835ff2cfb548a6b09516c0ea5d97e8f0e86",
+                "reference": "ffb49835ff2cfb548a6b09516c0ea5d97e8f0e86",
                 "shasum": ""
             },
             "require": {
@@ -7221,11 +7226,14 @@
                 "gehrisandro/tailwind-merge-laravel": "^1.3",
                 "illuminate/auth": "^12.68|^13.27",
                 "illuminate/bus": "^12.68|^13.27",
+                "illuminate/cache": "^12.68|^13.27",
                 "illuminate/console": "^12.68|^13.27",
                 "illuminate/contracts": "^12.68|^13.27",
                 "illuminate/cookie": "^12.68|^13.27",
                 "illuminate/database": "^12.68|^13.27",
+                "illuminate/events": "^12.68|^13.27",
                 "illuminate/filesystem": "^12.68|^13.27",
+                "illuminate/hashing": "^12.68|^13.27",
                 "illuminate/http": "^12.68|^13.27",
                 "illuminate/notifications": "^12.68|^13.27",
                 "illuminate/queue": "^12.68|^13.27",
@@ -7299,20 +7307,20 @@
                 "issues": "https://github.com/shopperlabs/framework/issues",
                 "source": "https://github.com/shopperlabs/framework"
             },
-            "time": "2026-09-25T15:48:01+00:00"
+            "time": "2026-10-05T13:07:19+00:00"
         },
         {
             "name": "shopper/payment",
-            "version": "v3.0.0-rc.2",
+            "version": "v3.0.0-rc.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopperlabs/payment.git",
-                "reference": "00f9cb9abd3ea824a0acfa84b3e06dde9675010b"
+                "reference": "28f842ff2c41ff94982c4e8a21bd08f985fb3b20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopperlabs/payment/zipball/00f9cb9abd3ea824a0acfa84b3e06dde9675010b",
-                "reference": "00f9cb9abd3ea824a0acfa84b3e06dde9675010b",
+                "url": "https://api.github.com/repos/shopperlabs/payment/zipball/28f842ff2c41ff94982c4e8a21bd08f985fb3b20",
+                "reference": "28f842ff2c41ff94982c4e8a21bd08f985fb3b20",
                 "shasum": ""
             },
             "require": {
@@ -7347,30 +7355,32 @@
             "description": "Shopper payment providers integration",
             "support": {
                 "issues": "https://github.com/shopperlabs/payment/issues",
-                "source": "https://github.com/shopperlabs/payment/tree/v3.0.0-rc.2"
+                "source": "https://github.com/shopperlabs/payment/tree/v3.0.0-rc.3"
             },
-            "time": "2026-09-17T21:04:29+00:00"
+            "time": "2026-10-05T13:05:58+00:00"
         },
         {
             "name": "shopper/shipping",
-            "version": "v3.0.0-rc.2",
+            "version": "v3.0.0-rc.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopperlabs/shipping.git",
-                "reference": "1d2b410922bc258b77e07d02401727fbd77c6359"
+                "reference": "bafd327e352945f50e5ec0f523571a8b5f0abc56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopperlabs/shipping/zipball/1d2b410922bc258b77e07d02401727fbd77c6359",
-                "reference": "1d2b410922bc258b77e07d02401727fbd77c6359",
+                "url": "https://api.github.com/repos/shopperlabs/shipping/zipball/bafd327e352945f50e5ec0f523571a8b5f0abc56",
+                "reference": "bafd327e352945f50e5ec0f523571a8b5f0abc56",
                 "shasum": ""
             },
             "require": {
                 "illuminate/bus": "^12.68|^13.27",
+                "illuminate/cache": "^12.68|^13.27",
                 "illuminate/console": "^12.68|^13.27",
                 "illuminate/contracts": "^12.68|^13.27",
                 "illuminate/database": "^12.68|^13.27",
                 "illuminate/http": "^12.68|^13.27",
+                "illuminate/log": "^12.68|^13.27",
                 "illuminate/queue": "^12.68|^13.27",
                 "illuminate/support": "^12.68|^13.27",
                 "php": "^8.3",
@@ -7396,13 +7406,13 @@
             "description": "Shopper shipping providers integration",
             "support": {
                 "issues": "https://github.com/shopperlabs/shipping/issues",
-                "source": "https://github.com/shopperlabs/shipping/tree/v3.0.0-rc.2"
+                "source": "https://github.com/shopperlabs/shipping/tree/v3.0.0-rc.3"
             },
-            "time": "2026-09-17T21:04:26+00:00"
+            "time": "2026-10-05T13:05:56+00:00"
         },
         {
             "name": "shopper/sidebar",
-            "version": "v3.0.0-rc.2",
+            "version": "v3.0.0-rc.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopperlabs/sidebar.git",
@@ -7461,7 +7471,7 @@
             ],
             "support": {
                 "issues": "https://github.com/shopperlabs/sidebar/issues",
-                "source": "https://github.com/shopperlabs/sidebar/tree/v3.0.0-rc.2"
+                "source": "https://github.com/shopperlabs/sidebar/tree/v3.0.0-rc.3"
             },
             "time": "2026-09-17T21:04:36+00:00"
         },
